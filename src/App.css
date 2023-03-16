@@ -1,38 +1,48 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-image: url('./assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 7fr/2fr 1fr ;
+  grid-template-areas: 
+  'toDo SideBar'
+  'taskList SideBar'
+  ;
+  gap: 40px;
+  width: 80%;
+  margin: auto;
+  height: 100vh;
+  padding-top: 40px;
+}
+.header {
+  background-color:#1f567374;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 86, 115, 0.37);
+  backdrop-filter: blur(5px);
+  grid-area: toDo;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side__bar {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(5px);
+  grid-area: SideBar;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task__list {
+  background-color: rgba(246, 231, 203, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(246, 231, 203, 0.37);
+  backdrop-filter: blur(5px);
+  grid-area: taskList;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

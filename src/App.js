@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import Header from './components/header/Header';
+import TaskList from './components/TaskList/TaskList';
+import SideBar from './components/SideBar/SideBar';
+import AddModal from './components/AddModal/AddModal';
+import { toggle_modal } from './Redux/Actions/ModalAction';
+
+
+
 
 function App() {
+
+
+  const dispatch = useDispatch()
+
+  const modal=useSelector(state=>state.ModalReducer)
+  const PressEchap = (e) => {
+    if (e.keyCode === 27) {
+      dispatch(toggle_modal());
+    }
+  };
+  
+
+  const a =useSelector(state=>state.TestReducer)
+  console.log(a);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" onKeyDown={modal===true? PressEchap:null}>
+     <Header></Header>
+     <TaskList></TaskList>
+     <SideBar></SideBar>
+     <AddModal></AddModal>
     </div>
   );
 }

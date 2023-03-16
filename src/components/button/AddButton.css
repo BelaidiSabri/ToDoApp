@@ -1,0 +1,10 @@
+.add__btn{
+    width: 70px;
+    height: 70px;
+    border: none;
+    text-align: center;
+    border-radius: 50%;  
+}
+.add__btn:focus{
+    outline: none;
+}

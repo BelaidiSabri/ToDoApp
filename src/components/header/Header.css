@@ -1,0 +1,9 @@
+.header h1{
+   text-align: center;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+}

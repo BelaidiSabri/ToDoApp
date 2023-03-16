@@ -1,0 +1,62 @@
+.Modal__wapper{
+    
+    width: 25%;
+    aspect-ratio: 1/1;
+    background-color: #17a39769;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    overflow: hidden;
+    transition: filter 0.3s ease-in-out;
+    
+}
+.Modal__wapper input{
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    border: none;
+    font-size: 30px;
+    outline-style: none;
+}
+.Modal__wapper h1{
+    background-color: rgba(0, 0, 0, 0.306);
+    color: whitesmoke;
+    width: 100%;
+    margin-top: 0;
+    padding: 10px;
+}
+.Modal__wapper label{
+    color: black;
+}
+.modal__buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .modal__button {
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+      height: 40px;
+      padding: 0 20px;
+      filter: brightness(90%);
+    }
+    .accept__button{
+      background-color: #17a397;
+  }
+  .close__button{
+    background-color: #a52a2a;
+}
+.modal__button:hover{
+    cursor: pointer;
+    filter: brightness(110%);
+}
