@@ -24,6 +24,8 @@ const TaskList = () => {
   const toggleDropdown = () => {
     setShowFilterDropdown(!showFilterDropdown);
   };
+
+
   const filterTasks = (filterType) => {
     if (filterType === 'done') {
       setFilteredTasks(tasks.filter((e) => e.isDone === true));
@@ -72,8 +74,8 @@ const TaskList = () => {
           </ul>
         )}
       </div>
-      <div className={`${showFilterDropdown? "FilterAfter":""} FilterBefore`}>
-        <FontAwesomeIcon icon={faFilter} onClick={()=>toggleDropdown()}/>
+      <div className={`${showFilterDropdown? "FilterAfter":""} FilterBefore`}  onClick={()=>toggleDropdown()}>
+        <FontAwesomeIcon icon={faFilter}/>
       </div>  
       {showFilterDropdown&&<div className="dropDownFilter">
         <div className="show" onClick={()=>filterTasks('done')}><FontAwesomeIcon icon={faEye}/>  Done</div>

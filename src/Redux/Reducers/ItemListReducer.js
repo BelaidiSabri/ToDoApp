@@ -1,4 +1,4 @@
-import { AddTask, DeleteTask, UpdateTask,EditingTask, COMPLETED, FILTER } from "../Types/Type";
+import { AddTask, DeleteTask, UpdateTask, COMPLETED, FILTER } from "../Types/Type";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -11,8 +11,9 @@ const ItemListReducer =(state=tasks,action) =>{
             
         case DeleteTask:
             return state.filter((e)=>e.id!==action.payload)
-        case UpdateTask:
-            
+
+
+        case UpdateTask:  
             let UpdatedTodo=state.map((e)=>{if (e.id === action.payload.id){
                 return {...e,title:action.payload.updatedTitle}
             }
@@ -21,6 +22,8 @@ const ItemListReducer =(state=tasks,action) =>{
         }})   
         return UpdatedTodo;
 
+
+        
         case COMPLETED:
             return state.map(e=>{if(e.id===action.payload){
                 return {...e,isDone: !e.isDone}
